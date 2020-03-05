@@ -1,0 +1,15 @@
+Notas de scrapping:
+- Se usa selenium y se necesita un motor
+- El submodulo de selenium depende del navegador
+- Selenium necesita un motor como geckoengine que se instala por pacman
+- Cargamos el URL con los atributos de fecha (asi evitamos hacer clicks)
+- Importante tener el fuente con BS4 y html.parser
+- Para scrapear se usa el FindAll('table') para el grupo inicial
+ej. table = soup.find_all('td', {"class":"cmc-table__cell"})
+# donde cmc-table__cell es la clase de las etiquetas
+- Podemos iterar usando print y subconjunto de 'table'
+ej. print(table[4].find("div", {"class": ""}).get_text())
+- usamos get_text() para el contenido de la etiqueta
+- Serializamos con un for en python
+ej for result in table:
+- Debemos iterar solo los valores que nos interesen. 
